@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace DotNetExtensions.Validation
@@ -81,6 +82,11 @@ namespace DotNetExtensions.Validation
             {
                 throw new ArgumentException(errorMessage);
             }
+        }
+
+        public static void ValidateByAttributes(this object source)
+        {
+            Validator.ValidateObject(source, new ValidationContext(source), true);
         }
         #endregion
 
