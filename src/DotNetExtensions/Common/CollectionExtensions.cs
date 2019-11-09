@@ -196,5 +196,15 @@ namespace DotNetExtensions.Common
         {
             return source.JoinBy(",");
         }
+
+        public static Queue<T> ToQueue<T>(this IEnumerable<T> source)
+        {
+            return new Queue<T>(source);
+        }
+
+        public static Stack<T> ToStack<T>(this IEnumerable<T> source)
+        {
+            return new Stack<T>(source);
+        }
     }
 }
