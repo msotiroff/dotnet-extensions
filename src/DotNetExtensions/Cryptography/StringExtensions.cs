@@ -58,7 +58,7 @@ namespace DotNetExtensions.Cryptography
                 using (CryptoStream cryptoStream = new CryptoStream(
                     memoryStream, decryptor, CryptoStreamMode.Read))
                 {
-                    using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
+                    using (StreamReader streamReader = new StreamReader(cryptoStream))
                     {
                         return streamReader.ReadToEnd();
                     }
