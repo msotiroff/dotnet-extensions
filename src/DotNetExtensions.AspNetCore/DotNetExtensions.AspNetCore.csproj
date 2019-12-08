@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DotNetExtensions.AspNetCore</AssemblyName>
+    <PackageId>MSoft.DotNet.Extensions.AspNetCore</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors />
+    <Company />
+    <Description>Usefull extensions for ASP.NET Core applications.</Description>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/msotiroff/dotnet-extensions</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/msotiroff/EasyDynamo/blob/master/logo.jpg?raw=true</PackageIconUrl>
+    <RepositoryUrl>https://github.com/msotiroff/dotnet-extensions</RepositoryUrl>
+    <PackageTags>.NET ASP.NET Core</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,10 +20,14 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="MSoft.DotNet.Extensions" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DotNetExtensions\DotNetExtensions.csproj" />
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
