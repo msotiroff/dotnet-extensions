@@ -70,5 +70,12 @@ namespace DotNetExtensions.AspNetCore.Common
 
             return builder;
         }
+
+        public static IApplicationBuilder UseAnonymousBrowser(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<AnonymousBrowserMiddleware>();
+
+            return app;
+        }
     }
 }
