@@ -1,6 +1,7 @@
 ﻿using DotNetExtensions.AspNetCore.Middlewares;
 using DotNetExtensions.Common;
 using Microsoft.AspNetCore.Builder;
+using System;
 using System.Collections.Generic;
 
 namespace DotNetExtensions.AspNetCore.Common
@@ -74,6 +75,14 @@ namespace DotNetExtensions.AspNetCore.Common
         public static IApplicationBuilder UseAnonymousBrowser(this IApplicationBuilder app)
         {
             app.UseMiddleware<AnonymousBrowserMiddleware>();
+
+            return app;
+        }
+
+        public static IApplicationBuilder LogRequestorIpAddress(
+            this IApplicationBuilder app, Action<string> logAction)
+        {
+            app.UseMiddleware<LogRequestorIpAddressMiddleware>(logAction);
 
             return app;
         }
