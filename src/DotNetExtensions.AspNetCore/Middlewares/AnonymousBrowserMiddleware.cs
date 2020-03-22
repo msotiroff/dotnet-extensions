@@ -9,10 +9,14 @@ namespace DotNetExtensions.AspNetCore.Middlewares
     public class AnonymousBrowserMiddleware
     {
         private readonly RequestDelegate next;
+        private readonly TimeSpan expiration;
 
-        public AnonymousBrowserMiddleware(RequestDelegate next)
+        public AnonymousBrowserMiddleware(
+            RequestDelegate next,
+            TimeSpan expiration)
         {
             this.next = next;
+            this.expiration = expiration;
         }
 
         public async Task Invoke(HttpContext context)
@@ -26,7 +30,7 @@ namespace DotNetExtensions.AspNetCore.Middlewares
                     this.GenerateUniqueId(),
                     new CookieOptions
                     {
-                        Expires = DateTime.UtcNow.AddDays(30)
+                        Expires = DateTime.UtcNow.Add(this.expiration)
                     });
             }
 

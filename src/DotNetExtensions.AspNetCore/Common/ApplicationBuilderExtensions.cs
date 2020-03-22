@@ -72,9 +72,10 @@ namespace DotNetExtensions.AspNetCore.Common
             return builder;
         }
 
-        public static IApplicationBuilder UseAnonymousBrowser(this IApplicationBuilder app)
+        public static IApplicationBuilder UseAnonymousBrowser(
+            this IApplicationBuilder app, TimeSpan expiresAfter)
         {
-            app.UseMiddleware<AnonymousBrowserMiddleware>();
+            app.UseMiddleware<AnonymousBrowserMiddleware>(expiresAfter);
 
             return app;
         }
