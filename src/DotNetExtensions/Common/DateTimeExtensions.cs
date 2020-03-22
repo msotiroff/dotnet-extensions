@@ -34,5 +34,12 @@ namespace DotNetExtensions.Common
             return dateTime.Date >= startDate.Value.Date &&
                 dateTime.Date <= endDate.Value.Date;
         }
+
+        public static long ToUnixTime(this DateTime dateTime)
+        {
+            var span = dateTime - new DateTime(1970, 1, 1);
+
+            return (long)span.TotalMilliseconds;
+        }
     }
 }

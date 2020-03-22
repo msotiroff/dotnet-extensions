@@ -13,7 +13,7 @@
     <PackageIconUrl>https://github.com/msotiroff/EasyDynamo/blob/master/logo.jpg?raw=true</PackageIconUrl>
     <RepositoryUrl>https://github.com/msotiroff/dotnet-extensions</RepositoryUrl>
     <PackageTags>.NET ASP.NET Core</PackageTags>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <AssemblyVersion>1.2.1.0</AssemblyVersion>
   </PropertyGroup>
 

@@ -1,4 +1,6 @@
-﻿namespace DotNetExtensions.Common
+﻿using System;
+
+namespace DotNetExtensions.Common
 {
     public static class LongExtensions
     {
@@ -30,6 +32,11 @@
             var format = new string('0', leadingZeros + 1);
 
             return source.ToString(format);
+        }
+
+        public static DateTime FromUnixTime(this long value)
+        {
+            return new DateTime(1970, 1, 1).AddMilliseconds(value);
         }
     }
 }
